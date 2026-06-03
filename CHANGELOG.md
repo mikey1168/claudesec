@@ -1,0 +1,55 @@
+# Changelog
+
+All notable changes to `claudesec` are documented here. The library follows a phased roadmap (see [README.md](README.md#roadmap)). Versions follow [Semantic Versioning](https://semver.org/) where breaking changes mean skill renames, removals, or category restructures.
+
+## [Unreleased]
+
+### Added
+
+- 7 new web vulnerability skills:
+  - `offensive-lfi-rfi` — Local/Remote File Inclusion and path traversal
+  - `offensive-info-disclosure` — Sensitive file access, backups, and source code leaks
+  - `offensive-csrf` — Cross-Site Request Forgery, token bypasses, SameSite attributes
+  - `offensive-cors` — CORS misconfigurations, origin reflection, null origin
+  - `offensive-prototype-pollution` — Client and server-side JS prototype pollution
+  - `offensive-command-injection` — OS Command Injection bypasses and payloads
+  - `offensive-security-headers` — Security Headers validation and exploitation
+
+### Planned
+
+- Phase 1 — Internal AD/Windows split (16 skills)
+- Phase 2 — Cloud Identity / Hybrid (10 skills)
+- Phase 5 — Web Basics (8 skills)
+- Phase 6 — Web Advanced (10 skills)
+
+## [0.2.0] — 2025-05
+
+### Added
+
+- 7 new offensive skills:
+  - `offensive-active-directory` — AD attack methodology (Kerberoast, ASREProast, ACL abuse, ADCS ESC1-15, delegation, persistence, hybrid AAD)
+  - `offensive-business-logic` — workflow bypass, price/coupon/refund abuse, race conditions, anti-fraud defeat, chain construction
+  - `offensive-toctou` — time-of-check/use across binary, kernel, web, container layers with window-widening primitives
+  - `offensive-cloud` — AWS+Azure+GCP attack paths (privesc, IMDS, cross-account, persistence, CSPM evasion) [category-sized]
+- `offensive-reporting` — pro pentest report writing methodology (CVSS scoring, evidence hygiene, executive summaries, finding templates, attack chain narratives, deliverable formats, retest discipline)
+
+### Changed
+
+- **Reorganized skills into 10 category subdirectories.** Top-level `Skills/` now contains category folders (`web/`, `auth/`, `active-directory/`, `cloud/`, `infrastructure/`, `exploit-dev/`, `fuzzing/`, `recon/`, `ai/`, `utility/`). Skill folder names unchanged.
+- README rewritten with category-based navigation, badges, install snippets, and roadmap.
+- SECURITY.md rewritten with intended-use scope and disclosure policy.
+
+### Added (Documentation & Packaging)
+
+- `LICENSE` — MIT (was claimed in README, file now present)
+- `CONTRIBUTING.md` — skill format, frontmatter standard, review process
+- `CHANGELOG.md` — this file
+- `claude-skills.json` — machine-readable manifest of all skills
+- `install.sh` — installer that copies skills into the Claude skills path
+
+## [0.1.0] — 2024
+
+### Added
+
+- Initial library of 37 offensive security skills, derived from the Sahar Shlichov offensive checklist collection
+- Categories covered: web app, auth, infrastructure & binary, recon, fuzzing, AI security, utility
